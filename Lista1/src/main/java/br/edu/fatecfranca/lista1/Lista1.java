@@ -5,7 +5,7 @@
 
 package br.edu.fatecfranca.lista1;
 
-import br.edu.fatecfranca.lista1.exe0.Produto;
+import br.edu.fatecfranca.lista1.exe3.Produto;
 
 /**
  *
