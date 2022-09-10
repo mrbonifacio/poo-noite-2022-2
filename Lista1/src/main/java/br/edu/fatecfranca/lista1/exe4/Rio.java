@@ -1,64 +1,60 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.fatecfranca.lista1.exe4;
 
-/**
- *
- * @author 1090482113002
- */
 public class Rio {
+
     public String nome;
     public double nivel;
-    public boolean poluido; //true - está poluindo, falue- não está poluido 
+    public boolean poluido;
     
-    public Rio(){
-            
-    }
-    public Rio(String nome, double nivel, boolean poluido){
-        this.nome = nome;
-        this.nivel = nivel;
-        this.poluido = poluido;
-    }
+public Rio(){
     
-    public void ensolarar(double x){
-        if(x <= this.nivel){
-            this.nivel -= x;
-            System.out.println("Nivel do rio foi diminuido");
-        }
-        else {
-            System.out.print("Nivel nao pode ser negativo");           
-        }
+}
+
+public Rio(String nome,double nivel, boolean poluido){
+    this.nome = nome;
+    this.nivel = nivel;
+    this.poluido = poluido;
+}
+
+public void ensolarar(double x){
+    if(x <= this.nivel){
+        this.nivel -= x;
+        System.out.println("Nível do rio foi diminuído!");
     }
-    
-    public void chover (double x){
-        this.nivel += x;
-        System.out.println("Nivel do rio foi aumentado");
+    else{
+        System.out.println("Nível do rio não pode ser negativo!");
     }
-    
-    public void sujar(){
-        if (this.poluido){
-            System.out.println("Rio ja poluido");
-        }
-        else{
-            this.poluido = true;
-            System.out.println("Rio foi sujado");
-        }   
+}
+
+public void chover(double x){
+    this.nivel += x;
+    System.out.println("Nível do rio foi aumentado!");
+}
+
+public void sujar(){
+    if(this.poluido){
+        System.out.println("O rio já está poluído");
     }
-    
-    public void limpar(){
-        if (!this.poluido){
-            System.out.println("Rio ja limpo");
-        }
-        else{
-            this.poluido = false;
-            System.out.println("Rio foi limpo");
-        }
+    else{
+        this.poluido = true;
+        System.out.println("O rio foi poluído");
     }
-    public String paraString(){
-        String aux = (this.poluido ? "Esta poluido" : "Esta limpo");
-        return "Nome " + this.nome + " nivel " + this.nivel + " Situação " + aux;
+}
+
+public void limpar(){
+    if(this.poluido){
+        System.out.println("O rio já está limpo");
     }
-    
+    else{
+        this.poluido = false;
+        System.out.println("O rio foi limpo");
+    }
+}
+
+public String paraString(){
+    String aux = (this.poluido ? "Está poluído" : "Está limpo");
+    return "Nome: " + this.nome + 
+           " Nível " + this.nivel +
+           " Situação: " + aux;
+}
 }

@@ -6,7 +6,7 @@ package br.edu.fatecfranca.lista1.exe3;
 
 /**
  *
- * @author 1090482113002
+ * @author 1090482113045
  */
 public class Testa {
 

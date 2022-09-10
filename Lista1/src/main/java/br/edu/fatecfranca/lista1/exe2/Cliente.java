@@ -1,44 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package br.edu.fatecfranca.lista1.exe2;
 
-/**
- *
- * @author 1090482113002
- */
 public class Cliente {
-    public int nroConta, nroAgencia;
+    public int n_Conta, n_Agencia;
     public String nome;
     public double saldo;
+            
+public Cliente(){
     
-    //construtor sem parametro 
-    public Cliente(){
-        
-    }
+}    
     
-    //construtor com parametro 
-    public Cliente(int nroConta, int nroAgencia, String nome, double saldo){
-        this.nroConta = nroConta;
-        this.nroAgencia = nroAgencia;
-        this.nome = nome;
-        this.saldo = saldo;                             
+public Cliente(int n_Conta, int n_Agencia, String nome, double saldo){
+    this.n_Conta = n_Conta;
+    this.n_Agencia = n_Agencia;
+    this.nome = nome;
+    this.saldo = saldo;
+}
+
+public void depositar(double x){
+    this.saldo += x;
+}
+
+public void sacar(double x){
+    if(this.saldo > 0){
+        this.saldo -= x;
     }
-    
-    public void depositar(double x){
-        this.saldo += x;
-    }
-    public void sacar(double x){
-        if (x <= this.saldo){
-            this.saldo -= x;
-        }
-        else {
-            System.out.println("Saldo insuficiente");
-        }
-    }
-    
-    public String paraString(){
-        return "Nro Agência " + this.nroAgencia + " Nro Conta " + this.nroConta + " Nome " + this.nome + " Saldo " + this.saldo;
+    else{
+        System.out.println("Saldo insuficiente!");            
     }
 }
+
+public String paraString(){
+    return "Nº Agência: " + this.n_Conta +
+            " Nº Conta: " + this.n_Agencia +
+            " Nome: " + this.nome +
+            " Saldo: " + this.saldo;
+}
+}
+
